@@ -8,7 +8,7 @@ A research dashboard on structural engineering in the age of AI, with an evidenc
 - 24 references with claim-level links, dates, scopes, locations and limitations.
 - Three transparent task-weighted scenarios; forecast assumptions are labeled A01, not attributed to research institutions.
 - An editable scenario lab with task mixes, demand growth, additional assurance labor and JSON export.
-- Responsive dark/light layouts, accessible SVG chart descriptions, keyboard navigation and a written research breakdown.
+- Red accents with black/charcoal backgrounds, responsive dark/light layouts, accessible SVG chart descriptions, keyboard navigation and a written research breakdown.
 
 ## Architecture decision
 
