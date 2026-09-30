@@ -473,7 +473,7 @@
         "Handle IFC exports, versions and model health",
         "Control worksharing, phasing and design options"
       ],
-      "current": "Scripts automate repetition; AI assistance and experimental agents can author or modify selected BIM elements.",
+      "current": "Revit and other BIM workflows use scripts to automate repetition; AI assistance and experimental agents can author or modify selected BIM elements.",
       "future": "Agentic model changes become broader, with deterministic validation and rollback.",
       "human": "Approve model intent, analytical idealization and data completeness.",
       "refs": [

@@ -30,11 +30,12 @@ Open `http://localhost:8000`. To validate the model:
 node --test tests/model.test.cjs
 ```
 
-## Publish on GitHub Pages
+## Live dashboard and deployment
 
-Create a repository named `structural-engineering-ai`, push this `main` branch, and set **Settings → Pages → Source → GitHub Actions**. The included workflow validates and publishes the static site. The user must enable Pages at the repository level before a successful first deploy. See [GitHub's official instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) [S23].
+- [Published dashboard](https://isaiah-narvaez-42.github.io/structural-engineering-ai/)
+- [GitHub repository](https://github.com/Isaiah-Narvaez-42/structural-engineering-ai)
 
-For a personal public repository under `Isaiah-Narvaez-42`, the expected project URL is `https://isaiah-narvaez-42.github.io/structural-engineering-ai/`. This is an expected URL, **not a claim that deployment has happened**.
+The dashboard was deployed and opened successfully on **30 September 2026**. Pages uses **GitHub Actions**. Each push to `main` runs the seven model tests and publishes the static site through the included workflow. See [GitHub's official instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) [S23]. See [VALIDATION.md](VALIDATION.md) for the checks performed and their limits.
 
 ## Updating the research
 
