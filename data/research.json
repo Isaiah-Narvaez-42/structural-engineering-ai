@@ -347,7 +347,9 @@
         75,
         85
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Guidance",
+      "evidenceNote": "Document assistance; no full-role time study in this review."
     },
     {
       "id": "T02",
@@ -375,7 +377,9 @@
         65,
         75
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Bounded benchmark",
+      "evidenceNote": "Optimization is demonstrated for limited design settings."
     },
     {
       "id": "T03",
@@ -403,7 +407,9 @@
         70,
         80
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Guidance + prototype",
+      "evidenceNote": "Code retrieval and BIM compliance experiments have limited scope."
     },
     {
       "id": "T04",
@@ -430,7 +436,9 @@
         80,
         90
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Bounded benchmark",
+      "evidenceNote": "Model setup and optimization still require engineering interpretation."
     },
     {
       "id": "T05",
@@ -458,7 +466,9 @@
         85,
         93
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Bounded benchmark",
+      "evidenceNote": "Specific sizing and optimization workflows; no universal design autonomy."
     },
     {
       "id": "T06",
@@ -489,7 +499,9 @@
         90,
         96
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Product + prototype",
+      "evidenceNote": "Version-specific authoring assistance and experimental BIM agents."
     },
     {
       "id": "T07",
@@ -517,7 +529,9 @@
         93,
         97
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Product + guidance",
+      "evidenceNote": "Selected view/tag assistance and documentation use cases."
     },
     {
       "id": "T08",
@@ -544,7 +558,9 @@
         72,
         82
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Guidance",
+      "evidenceNote": "Interoperability supports coordination but does not establish autonomous delivery."
     },
     {
       "id": "T09",
@@ -572,7 +588,9 @@
         55,
         65
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Guidance + policy",
+      "evidenceNote": "Validation and competence are central; review savings are unmeasured here."
     },
     {
       "id": "T10",
@@ -599,7 +617,9 @@
         70,
         82
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Guidance",
+      "evidenceNote": "Drafting and retrieval can assist construction support; field decisions remain contextual."
     },
     {
       "id": "T11",
@@ -627,7 +647,9 @@
         45,
         65
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Guidance",
+      "evidenceNote": "Assessment assistance is discussed; uncertain physical conditions remain a constraint."
     },
     {
       "id": "T12",
@@ -653,7 +675,9 @@
         70,
         80
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Role + survey",
+      "evidenceNote": "Commercial duties are documented; structural-specific AI savings are not measured."
     },
     {
       "id": "T13",
@@ -681,7 +705,9 @@
         85,
         93
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Standard + benchmark",
+      "evidenceNote": "Quantities and optimization are supported in bounded digital workflows."
     },
     {
       "id": "T14",
@@ -709,7 +735,9 @@
         35,
         50
       ],
-      "assumption": "A01"
+      "assumption": "A01",
+      "evidenceLabel": "Role + policy",
+      "evidenceNote": "Current policy preserves professional responsibility; future arrangements are uncertain."
     }
   ],
   "scenarios": [
@@ -745,7 +773,9 @@
         "S14",
         "S15",
         "S17"
-      ]
+      ],
+      "dash": "7 5",
+      "marker": "square"
     },
     {
       "id": "central",
@@ -780,7 +810,9 @@
         "S18",
         "S20",
         "S21"
-      ]
+      ],
+      "dash": "none",
+      "marker": "circle"
     },
     {
       "id": "fast",
@@ -815,6 +847,44 @@
         "S15",
         "S20",
         "S21"
+      ],
+      "dash": "2 5",
+      "marker": "diamond"
+    },
+    {
+      "id": "setback",
+      "name": "Integration setback",
+      "color": "var(--scenario-setback)",
+      "dash": "10 4 2 4",
+      "marker": "triangle",
+      "capability": [
+        0,
+        0.75,
+        0.75,
+        0.8,
+        0.85
+      ],
+      "adoption": [
+        0,
+        0.55,
+        0.4,
+        0.55,
+        0.65
+      ],
+      "overhead": [
+        0,
+        0.07,
+        0.1,
+        0.09,
+        0.08
+      ],
+      "story": "A conditional stress case: integration and assurance costs rise, realized adoption retreats in 2036, then partially recovers. A temporary reversal is possible even as tools improve.",
+      "trigger": "Audited savings fail to survive checking and rework; a client, insurer or regulator limits deployment. This is an invented stress event, not a reported event or assigned probability.",
+      "refs": [
+        "S05",
+        "S14",
+        "S15",
+        "S17"
       ]
     }
   ],
@@ -930,7 +1000,8 @@
       "The occupation index assumes constant task mix and linear labor scaling; it excludes wage, fee, capital and general-equilibrium effects.",
       "The model is conditional; decades-ahead output is not a confidence interval or a probability.",
       "The fast scenario presumes assurance works; an alternative safety setback could delay or reverse adoption.",
-      "Task percentages are illustrative totals; task overlap is allocated once by primary activity."
+      "Task percentages are illustrative totals; task overlap is allocated once by primary activity.",
+      "Role profiles, the setback path and sensitivity bounds are author assumptions introduced in dashboard v2; no new empirical validation is claimed."
     ],
     "refs": [
       "S01",
@@ -942,6 +1013,200 @@
       "S16",
       "S17",
       "S24"
-    ]
-  }
+    ],
+    "sensitivity": "A01 v2 sensitivity envelope: multiply the selected task potentials by 0.8 and 1.2 and adjust the additional review burden by +3 and -3 percentage points respectively. Other selected inputs remain fixed. Clip within-task potential × capability at 98%, realization at 100%, and added overhead to 0–50%. These are chosen stress bounds, not confidence intervals, empirical ranges or probabilities."
+  },
+  "updated": "2026-10-01",
+  "version": "2.0",
+  "profiles": [
+    {
+      "id": "balanced",
+      "name": "Balanced design team",
+      "weights": [
+        5,
+        8,
+        7,
+        12,
+        10,
+        14,
+        8,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        3
+      ],
+      "description": "A team-level mix of design, BIM, delivery and checking.",
+      "refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "assumption": "A01"
+    },
+    {
+      "id": "junior",
+      "name": "Junior engineer",
+      "weights": [
+        6,
+        5,
+        10,
+        17,
+        15,
+        14,
+        12,
+        5,
+        5,
+        4,
+        3,
+        1,
+        2,
+        1
+      ],
+      "description": "More calculation setup, design iterations and production; less commercial leadership.",
+      "refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "assumption": "A01"
+    },
+    {
+      "id": "project",
+      "name": "Project engineer",
+      "weights": [
+        5,
+        10,
+        8,
+        12,
+        12,
+        8,
+        7,
+        10,
+        8,
+        7,
+        5,
+        4,
+        2,
+        2
+      ],
+      "description": "A mix of technical ownership, coordination and construction administration.",
+      "refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "assumption": "A01"
+    },
+    {
+      "id": "specialist",
+      "name": "Technical specialist",
+      "weights": [
+        4,
+        15,
+        8,
+        24,
+        18,
+        3,
+        3,
+        5,
+        10,
+        2,
+        4,
+        1,
+        2,
+        1
+      ],
+      "description": "Advanced analysis and technical decisions, with less routine BIM production.",
+      "refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "assumption": "A01"
+    },
+    {
+      "id": "bim",
+      "name": "BIM professional",
+      "weights": [
+        3,
+        3,
+        4,
+        5,
+        4,
+        35,
+        23,
+        12,
+        5,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "description": "Model authoring, documentation, standards and coordination.",
+      "refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "assumption": "A01"
+    },
+    {
+      "id": "principal",
+      "name": "Principal / team lead",
+      "weights": [
+        7,
+        12,
+        4,
+        4,
+        4,
+        2,
+        2,
+        12,
+        14,
+        7,
+        6,
+        14,
+        2,
+        10
+      ],
+      "description": "Review, client work, commercial decisions, mentoring and responsibility.",
+      "refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "assumption": "A01"
+    },
+    {
+      "id": "field",
+      "name": "Existing-building / field",
+      "weights": [
+        8,
+        5,
+        7,
+        8,
+        10,
+        4,
+        5,
+        8,
+        10,
+        12,
+        15,
+        3,
+        2,
+        3
+      ],
+      "description": "Investigation, existing information, assessment and construction support.",
+      "refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "assumption": "A01"
+    }
+  ]
 }

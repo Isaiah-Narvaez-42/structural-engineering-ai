@@ -1,3 +1,44 @@
+# Edition 02 method addendum — 1 October 2026
+
+The dashboard has been redesigned. The research review below remains a **30 September 2026 evidence snapshot**. This addendum introduces author-designed modeling and interface changes, not new empirical findings. The original three-path tables below retain their original inputs and remain reproducible at default settings. The current dashboard additionally includes the setback stress path and user modifiers.
+
+## A01 v2 calculation
+
+For task i, scenario s and future horizon t:
+
+`gross = Σ w_i × min(0.98, p_i,t × c_s,t × P) × min(1, a_s,t × A)`
+
+`net = gross − clip(h_s,t + H, 0, 0.50)`
+
+P is the user potential multiplier; A is the user realization multiplier; H adjusts the added-review burden. Defaults are P=1, A=1, H=0. Existing review and automation are already in the baseline. All additional savings are zero in 2026. Negative net savings mean added labor. Task hours are normalized to determine w. Baseline shares and alternative role profiles are author assumptions, not measured weeks. Context: [S02], [S03], [S04], [S13], [S15] in the source register below.
+
+The displayed envelope runs the selected model with P×0.8 and H+0.03 for the lower endpoint, and P×1.2 and H−0.03 for the upper endpoint. The realization input stays fixed. These are chosen stress bounds, **not confidence intervals or probabilities**. They do not measure growing long-horizon uncertainty. One-at-a-time sensitivities are also shown. Context: [S13], [S15], [S17].
+
+## Integration-setback stress scenario
+
+This invented conditional scenario represents adoption retreat and increased integration/assurance work, followed by partial recovery. It does not claim an actual incident, assign a probability or extrapolate a reported failure. Context: [S05], [S14], [S15], [S17].
+
+| Year | Capability c | Realization a | Added review h |
+|---|---:|---:|---:|
+| 2031 | 0.75 | 0.55 | 7% |
+| 2036 | 0.75 | 0.40 | 10% |
+| 2046 | 0.80 | 0.55 | 9% |
+| 2056 | 0.85 | 0.65 | 8% |
+
+Table: author inputs under A01 v2; all modifiers default to neutral. Research citations provide context, not these numerical estimates.
+
+## Role profiles and reproducibility
+
+Profiles include balanced team, junior engineer, project engineer, technical specialist, BIM professional, principal/team lead and existing-building/field work. They are explicitly illustrative allocations informed by the role taxonomy [S02–S04]. Users should replace them with measured hours. The exact weights are in `data/research.json`.
+
+The labor-demand accounting identity remains unchanged: `index = 100 × (1+g)^T × (1−net+n)`. It is not an employment forecast. g and n are editable assumptions; n is zero at the 2026 baseline. Context: [S01], [S19], [S24].
+
+A downloadable blank measurement CSV proposes recording comparable scope, tool version, setup, production, review, correction, downstream rework and acceptance. This is an author-proposed protocol informed by [S13], [S15], [S17], not a collected dataset.
+
+---
+
+# Original research synthesis — 30 September 2026
+
 # Structural engineering in the age of AI
 
 **Research cut-off: 30 September 2026. Horizons: 2031, 2036, 2046 and 2056.**

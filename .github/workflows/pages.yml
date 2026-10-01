@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '22'
       - name: Validate research and forecast model
-        run: node --test tests/model.test.cjs
+        run: node --test tests/*.test.cjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Prepare static site
@@ -30,6 +30,8 @@ jobs:
           mkdir _site
           cp index.html styles.css model.js app.js RESEARCH.md _site/
           cp -r data _site/data
+          mkdir -p _site/_qa
+          cp tests/responsive.html _site/_qa/index.html
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

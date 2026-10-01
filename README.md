@@ -1,48 +1,49 @@
-# Structural Futures
+# Structural Futures — Edition 02
 
-A research dashboard on structural engineering in the age of AI, with an evidence cut-off of **30 September 2026** and conditional scenarios for **2031, 2036, 2046 and 2056**.
+An interactive research dashboard about AI across the complete structural-engineering workflow. The evidence snapshot is **30 September 2026**; the dashboard was redesigned **1 October 2026**.
 
-## What's included
+[Open the dashboard](https://isaiah-narvaez-42.github.io/structural-engineering-ai/)
 
-- A 59-task atlas in 14 clusters covering engineering, BIM, documentation, coordination, construction administration, field assessment, QA, commercial work and professional responsibility.
-- 24 references with claim-level links, dates, scopes, locations and limitations.
-- Three transparent task-weighted scenarios; forecast assumptions are labeled A01, not attributed to research institutions.
-- An editable scenario lab with task mixes, demand growth, additional assurance labor and JSON export.
-- Red accents with black/charcoal backgrounds, responsive dark/light layouts, accessible SVG chart descriptions, keyboard navigation and a written research breakdown.
+## Explore
 
-## Architecture decision
+- **Overview:** concise synthesis, horizon controls, four distinguishable scenario paths and observed evidence with boundaries.
+- **Task atlas + BIM:** 59 tasks in 14 clusters; a clickable current-evidence/future-scenario heatmap with calculation and source details.
+- **My workload:** seven illustrative role/workload profiles, editable weekly hours, technology and review assumptions, demand sensitivity, local persistence, shareable URLs, JSON import/export and a print-ready report with the full source register.
+- **Future scenarios:** 2026, 2031, 2036, 2046 and 2056; constrained adoption, managed transformation, accelerated substitution and an integration-setback stress case.
+- **Evidence room:** scoped findings, source panels and a blank CSV measurement template for comparing full workflows.
+- **Career playbook:** practical preparation and a proposed 90-day measurement plan.
+- **Methods / References:** complete inputs, formulas, limitations and 24 source entries.
 
-**Plain HTML, CSS and JavaScript.** No framework, bundler, package install, remote fonts or chart CDN. This finite research site does not require React state infrastructure, Jekyll content generation or Astro compilation. Static relative paths work on a GitHub Pages project URL and locally. Native MathML displays equations.
+## Forecast boundaries
 
-`data/research.json` is the canonical dataset; `data/research.js` mirrors it to support opening the site without a server. `model.js` contains the model. Tests verify the mirror, references and forecast math.
+A01 v2 is a conditional accounting model, not a fitted prediction. Baseline weights, role profiles, future task potentials, scenario factors and sensitivity bounds are author assumptions. Citations support context and mechanisms, not the exact future percentages.
 
-## Preview
+The headline sensitivity envelope combines potential ×0.8 / ×1.2 with +3 / −3 percentage points of additional review. It is **not a confidence interval**. Negative savings are supported. The setback case deliberately allows a temporary decline in realized savings. Research access dates remain unchanged: this redesign does not claim a fresh literature review.
 
-Open `index.html` directly, or run:
+The original written synthesis remains in [RESEARCH.md](RESEARCH.md), preceded by an Edition 02 method addendum. The app and `data/research.json` define the current model.
+
+## Architecture
+
+Plain **HTML, CSS and JavaScript**. No package install, third-party chart CDN, remote fonts, server, login or framework build is required. A finite research calculator benefits from easy inspection and static GitHub Pages deployment; a framework migration is unnecessary here.
+
+`data/research.json` is canonical. `data/research.js` mirrors it for browser loading. `model.js` provides pure calculations, snapshot validation and exact workload allocation. `app.js` handles the views and interactions.
+
+Local saves remain in browser storage. Shared links include the selected hours and assumptions. Import accepts the supported v2 numeric schema and rejects invalid or oversized input. No analytics or outbound data collection is included.
+
+## Run and validate
 
 ```sh
 python3 -m http.server 8000
+node --test tests/*.test.cjs
 ```
 
-Open `http://localhost:8000`. To validate the model:
+Open `http://localhost:8000`. The responsive review harness is `tests/responsive.html` locally and `_qa/` in the deployed artifact; it is unlinked from the dashboard and marked noindex. It tests constrained viewport layouts, not a physical mobile browser.
 
-```sh
-node --test tests/model.test.cjs
-```
+The GitHub Actions workflow tests and publishes each push to `main`. Pages uses GitHub Actions. Official hosting reference: [GitHub Pages creation guide](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), S23.
 
-## Live dashboard and deployment
+## Update research
 
-- [Published dashboard](https://isaiah-narvaez-42.github.io/structural-engineering-ai/)
-- [GitHub repository](https://github.com/Isaiah-Narvaez-42/structural-engineering-ai)
-
-The dashboard was deployed and opened successfully on **30 September 2026**. Pages uses **GitHub Actions**. Each push to `main` runs the seven model tests and publishes the static site through the included workflow. See [GitHub's official instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) [S23]. See [VALIDATION.md](VALIDATION.md) for the checks performed and their limits.
-
-## Updating the research
-
-1. Add a source with stable ID, URL, evidence type, finding, scope, limitation, locator and access date to the JSON.
-2. Add citations wherever a research-derived claim is shown.
-3. Distinguish measured results from author inferences and assumptions.
-4. Regenerate the JavaScript data mirror from JSON:
+Add a stable source ID, original URL, finding, scope, limitation, document location and actual access date to the JSON. Link evidence at point of use. Clearly label author inferences. Update the written synthesis and regenerate the mirror:
 
 ```sh
 python3 - <<'PY'
@@ -54,10 +55,4 @@ d = json.loads((p / 'research.json').read_text())
 PY
 ```
 
-5. Update the written research and rerun tests. Snapshot date and citations must remain consistent.
-
-## Interpretive limits
-
-The task weights and future percentages are illustrative assumptions, not measured time allocations or statistically calibrated forecasts. The labor-demand index is a sensitivity model, not an employment prediction. Technology capability, actual adoption and legal authority differ. Company benchmarks and research prototypes are clearly labeled.
-
-Third-party papers and product documentation remain the property of their publishers. Only short factual summaries and links are included; the repo does not redistribute the papers. This dashboard contains no user financial, employer-project or private engineering data.
+Bump asset query versions in `index.html` after changes and rerun the tests. See [VALIDATION.md](VALIDATION.md) and [CHANGELOG.md](CHANGELOG.md).
